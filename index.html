@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="La Gazelle Beauty Salon - Luxury beauty services in Qatar">
   <title>La Gazelle Beauty Salon</title>
 
   <style>
@@ -10,166 +11,480 @@
       margin: 0;
       padding: 0;
       box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    :root {
+      --primary: #a72c81;
+      --primary-dark: #79205f;
+      --light-pink: #f8edf5;
+      --cream: #fbf9f7;
+      --dark: #231f20;
+      --grey: #777;
+      --white: #ffffff;
     }
 
     body {
-      font-family: Arial, sans-serif;
-      background: #f7f2f4;
-      color: #2d1f2a;
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--white);
+      color: var(--dark);
+      line-height: 1.6;
     }
 
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* HEADER */
+
     header {
-      background: #ffffff;
-      padding: 18px 7%;
+      width: 100%;
+      height: 105px;
+      background: rgba(255,255,255,0.97);
       display: flex;
-      justify-content: space-between;
       align-items: center;
+      justify-content: space-between;
+      padding: 0 7%;
       position: sticky;
       top: 0;
       z-index: 1000;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+      box-shadow: 0 2px 15px rgba(0,0,0,0.06);
     }
 
-   .logo {
-  font-size: 26px;
-  font-weight: bold;
-  color: #7a215d;
-}
-
-.logo img {
-  height: 70px;
-  width: auto;
-  display: block;
-}
-    
-    nav a {
-      text-decoration: none;
-      color: #332631;
-      margin-left: 22px;
-      font-size: 15px;
+    .logo img {
+      width: 100px;
+      display: block;
     }
 
-    .hero {
-      min-height: 88vh;
+    nav {
       display: flex;
+      gap: 35px;
       align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 40px 20px;
-      background:
-        linear-gradient(rgba(25,10,22,0.38), rgba(25,10,22,0.38)),
-url('hero.png');
-      background-size: cover;
-      background-position: center;
+    }
+
+    nav a {
+      font-size: 15px;
+      transition: .3s;
+    }
+
+    nav a:hover {
+      color: var(--primary);
+    }
+
+    .nav-book {
+      color: white;
+      background: var(--primary);
+      padding: 12px 22px;
+      border-radius: 30px;
+    }
+
+    .nav-book:hover {
+      background: var(--primary-dark);
       color: white;
     }
 
+    /* HERO */
+
+    .hero {
+      min-height: calc(100vh - 105px);
+      position: relative;
+      background:
+        linear-gradient(
+          90deg,
+          rgba(28,20,27,0.70),
+          rgba(28,20,27,0.28)
+        ),
+        url("hero.png") center center / cover no-repeat;
+
+      display: flex;
+      align-items: center;
+      padding: 80px 8%;
+    }
+
     .hero-content {
-      max-width: 800px;
+      max-width: 700px;
+      color: white;
+    }
+
+    .hero-small {
+      text-transform: uppercase;
+      letter-spacing: 4px;
+      font-size: 13px;
+      margin-bottom: 18px;
     }
 
     .hero h1 {
-      font-size: 58px;
-      margin-bottom: 15px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(48px, 7vw, 86px);
+      font-weight: 400;
+      line-height: 1.03;
+      margin-bottom: 25px;
     }
 
     .hero p {
-      font-size: 20px;
-      margin-bottom: 30px;
+      max-width: 570px;
+      font-size: 18px;
+      margin-bottom: 35px;
+      color: rgba(255,255,255,.92);
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
     }
 
     .btn {
       display: inline-block;
-      padding: 14px 28px;
-      background: #8b2d72;
+      padding: 15px 30px;
+      border-radius: 40px;
+      transition: .3s;
+      font-size: 15px;
+    }
+
+    .btn-primary {
+      background: var(--primary);
       color: white;
-      text-decoration: none;
-      border-radius: 30px;
-      margin: 5px;
+    }
+
+    .btn-primary:hover {
+      background: var(--primary-dark);
+      transform: translateY(-2px);
     }
 
     .btn-outline {
-      background: transparent;
       border: 1px solid white;
+      color: white;
     }
 
-    section {
-      padding: 80px 7%;
+    .btn-outline:hover {
+      background: white;
+      color: var(--dark);
+    }
+
+    /* INTRO */
+
+    .intro {
+      padding: 110px 8%;
+      text-align: center;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .section-small {
+      color: var(--primary);
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      font-size: 12px;
+      margin-bottom: 16px;
     }
 
     .section-title {
-      text-align: center;
-      margin-bottom: 45px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-weight: 400;
+      font-size: clamp(36px, 5vw, 56px);
+      line-height: 1.15;
+      margin-bottom: 24px;
     }
 
-    .section-title h2 {
-      font-size: 38px;
-      color: #6b1f56;
-      margin-bottom: 10px;
+    .intro p {
+      color: var(--grey);
+      font-size: 17px;
+      max-width: 780px;
+      margin: auto;
     }
+
+    /* SERVICES */
 
     .services {
+      padding: 100px 7%;
+      background: var(--cream);
+    }
+
+    .section-head {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+
+    .services-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      gap: 22px;
+      gap: 20px;
     }
 
     .service-card {
       background: white;
-      padding: 35px 20px;
-      border-radius: 18px;
-      text-align: center;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+      min-height: 280px;
+      padding: 45px 30px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: .3s;
+      border-bottom: 3px solid transparent;
+    }
+
+    .service-card:hover {
+      transform: translateY(-8px);
+      border-color: var(--primary);
+      box-shadow: 0 20px 45px rgba(0,0,0,.08);
+    }
+
+    .service-number {
+      font-family: Georgia, serif;
+      color: #d7b1cb;
+      font-size: 40px;
     }
 
     .service-card h3 {
-      color: #70245a;
-      margin-bottom: 12px;
+      font-family: Georgia, serif;
+      font-size: 25px;
+      font-weight: 400;
+      margin: 15px 0 8px;
     }
 
-    .booking {
-      background: #2c1627;
+    .service-card p {
+      color: var(--grey);
+      font-size: 14px;
+    }
+
+    /* OFFER */
+
+    .offers {
+      padding: 110px 8%;
+      background: var(--light-pink);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .offer-box {
+      background: var(--primary);
       color: white;
-      text-align: center;
+      padding: 70px 55px;
     }
 
-    .booking h2 {
-      font-size: 38px;
-      margin-bottom: 15px;
-    }
-
-    .booking p {
+    .offer-box h2 {
+      font-family: Georgia, serif;
+      font-size: 50px;
+      font-weight: 400;
+      line-height: 1.1;
       margin-bottom: 25px;
     }
 
-    footer {
-      background: #160d14;
-      color: white;
-      text-align: center;
-      padding: 30px;
+    .offer-price {
+      font-size: 18px;
+      margin-bottom: 25px;
     }
 
-    @media(max-width: 900px) {
-      .services {
-        grid-template-columns: repeat(2, 1fr);
+    .offer-price strong {
+      font-family: Georgia, serif;
+      font-size: 54px;
+      font-weight: 400;
+    }
+
+    .offer-details h2 {
+      margin-bottom: 25px;
+    }
+
+    .offer-details p {
+      color: var(--grey);
+      margin-bottom: 30px;
+    }
+
+    /* ABOUT */
+
+    .about {
+      padding: 120px 8%;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: 90px;
+    }
+
+    .about-logo {
+      background: var(--cream);
+      min-height: 480px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .about-logo img {
+      width: min(300px, 60%);
+    }
+
+    .about-content p {
+      color: var(--grey);
+      margin-bottom: 25px;
+    }
+
+    /* CONTACT */
+
+    .contact {
+      background: #211d20;
+      color: white;
+      padding: 100px 8%;
+    }
+
+    .contact-container {
+      max-width: 1100px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: 1.2fr 1fr 1fr;
+      gap: 60px;
+    }
+
+    .contact-logo img {
+      width: 130px;
+      background: white;
+      padding: 10px;
+      margin-bottom: 25px;
+    }
+
+    .contact p,
+    .contact a {
+      color: #ccc;
+      margin-bottom: 10px;
+      display: block;
+      font-size: 14px;
+    }
+
+    .contact h3 {
+      font-family: Georgia, serif;
+      font-weight: 400;
+      font-size: 23px;
+      margin-bottom: 20px;
+    }
+
+    .contact a:hover {
+      color: white;
+    }
+
+    .social-link {
+      color: #e4a7d2 !important;
+    }
+
+    /* FOOTER */
+
+    footer {
+      background: #161315;
+      color: #888;
+      padding: 25px;
+      text-align: center;
+      font-size: 13px;
+    }
+
+    /* WHATSAPP */
+
+    .whatsapp {
+      position: fixed;
+      right: 24px;
+      bottom: 24px;
+      width: 58px;
+      height: 58px;
+      background: #25D366;
+      border-radius: 50%;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 27px;
+      z-index: 2000;
+      box-shadow: 0 5px 20px rgba(0,0,0,.25);
+      transition: .3s;
+    }
+
+    .whatsapp:hover {
+      transform: scale(1.1);
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 900px) {
+
+      header {
+        height: 85px;
+        padding: 0 5%;
       }
 
-      nav {
+      .logo img {
+        width: 80px;
+      }
+
+      nav a:not(.nav-book) {
         display: none;
       }
 
+      .hero {
+        min-height: calc(100vh - 85px);
+        padding: 60px 7%;
+        background-position: 42% center;
+      }
+
       .hero h1 {
-        font-size: 42px;
+        font-size: 52px;
+      }
+
+      .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .offers,
+      .about {
+        grid-template-columns: 1fr;
+        gap: 45px;
+      }
+
+      .contact-container {
+        grid-template-columns: 1fr;
+        gap: 40px;
       }
     }
 
-    @media(max-width: 550px) {
-      .services {
-        grid-template-columns: 1fr;
+    @media (max-width: 550px) {
+
+      header {
+        padding: 0 20px;
+      }
+
+      .nav-book {
+        padding: 10px 18px;
+        font-size: 13px;
+      }
+
+      .hero {
+        padding: 45px 25px;
       }
 
       .hero h1 {
-        font-size: 34px;
+        font-size: 44px;
+      }
+
+      .hero p {
+        font-size: 16px;
+      }
+
+      .services-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .intro,
+      .services,
+      .offers,
+      .about,
+      .contact {
+        padding-left: 25px;
+        padding-right: 25px;
+      }
+
+      .offer-box {
+        padding: 50px 30px;
+      }
+
+      .offer-box h2 {
+        font-size: 39px;
       }
     }
   </style>
@@ -177,73 +492,329 @@ url('hero.png');
 
 <body>
 
-<header>
-<div class="logo"><img src="logo.png" alt="La Gazelle Beauty Salon"></div>
-  <nav>
-    <a href="#home">Home</a>
-    <a href="#services">Services</a>
-    <a href="#booking">Book Now</a>
-    <a href="#contact">Contact</a>
-  </nav>
-</header>
+  <!-- HEADER -->
+  <header>
+    <a href="#home" class="logo">
+      <img src="logo.png" alt="La Gazelle Beauty Salon">
+    </a>
 
-<section class="hero" id="home">
-  <div class="hero-content">
-    <h1>Beauty Begins Here</h1>
-    <p>Luxury beauty services designed to make you feel your best.</p>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#services">Services</a>
+      <a href="#offers">Offers</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+      <a class="nav-book"
+         href="https://wa.me/97452011520?text=Hello%20La%20Gazelle%20Beauty%20Salon%2C%20I%20would%20like%20to%20book%20an%20appointment."
+         target="_blank">
+         Book Now
+      </a>
+    </nav>
+  </header>
 
-    <a class="btn" href="#services">Our Services</a>
-    <a class="btn btn-outline" href="#booking">Book Now</a>
-  </div>
-</section>
 
-<section id="services">
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="hero-content">
+      <div class="hero-small">La Gazelle Beauty Salon</div>
 
-  <div class="section-title">
-    <h2>Our Services</h2>
-    <p>Discover our beauty and wellness services</p>
-  </div>
+      <h1>Beauty Begins Here.</h1>
 
-  <div class="services">
+      <p>
+        Discover a luxurious beauty experience created to make you
+        feel confident, relaxed and beautifully yourself.
+      </p>
 
-    <div class="service-card">
-      <h3>Hair</h3>
-      <p>Hair styling, coloring and treatments.</p>
+      <div class="hero-buttons">
+        <a href="#services" class="btn btn-primary">
+          Explore Services
+        </a>
+
+        <a href="https://wa.me/97452011520?text=Hello%20La%20Gazelle%20Beauty%20Salon%2C%20I%20would%20like%20to%20book%20an%20appointment."
+           target="_blank"
+           class="btn btn-outline">
+          Book Now
+        </a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- INTRO -->
+  <section class="intro">
+    <div class="section-small">Welcome to La Gazelle</div>
+
+    <h2 class="section-title">
+      Your Beauty. Your Moment.
+    </h2>
+
+    <p>
+      From hair and nails to relaxing treatments and traditional
+      Moroccan bath experiences, La Gazelle Beauty Salon brings
+      together beauty, care and elegance in one destination.
+    </p>
+  </section>
+
+
+  <!-- SERVICES -->
+  <section class="services" id="services">
+
+    <div class="section-head">
+      <div class="section-small">Our Services</div>
+
+      <h2 class="section-title">
+        Everything You Need to Feel Beautiful
+      </h2>
     </div>
 
-    <div class="service-card">
-      <h3>Nails</h3>
-      <p>Manicure, pedicure, gel and extensions.</p>
+    <div class="services-grid">
+
+      <div class="service-card">
+        <div class="service-number">01</div>
+        <div>
+          <h3>Hair</h3>
+          <p>
+            Blow dry, hair styling, coloring, treatments,
+            cutting and more.
+          </p>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <div class="service-number">02</div>
+        <div>
+          <h3>Nails</h3>
+          <p>
+            Manicure, pedicure, gel color, extensions
+            and nail care.
+          </p>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <div class="service-number">03</div>
+        <div>
+          <h3>Moroccan Bath</h3>
+          <p>
+            Traditional Moroccan bath experiences
+            for relaxation and complete body care.
+          </p>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <div class="service-number">04</div>
+        <div>
+          <h3>Massage</h3>
+          <p>
+            Relaxing beauty and wellness treatments
+            designed for your comfort.
+          </p>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <div class="service-number">05</div>
+        <div>
+          <h3>Facial</h3>
+          <p>
+            Facial treatments and skincare services
+            for fresh, radiant-looking skin.
+          </p>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <div class="service-number">06</div>
+        <div>
+          <h3>Waxing</h3>
+          <p>
+            Professional face and body waxing services
+            with care and attention.
+          </p>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <div class="service-number">07</div>
+        <div>
+          <h3>Makeup</h3>
+          <p>
+            Elegant makeup looks for occasions,
+            events and special moments.
+          </p>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <div class="service-number">08</div>
+        <div>
+          <h3>Beauty Packages</h3>
+          <p>
+            Choose from our special beauty packages
+            and enjoy more of your favorite services.
+          </p>
+        </div>
+      </div>
+
     </div>
 
-    <div class="service-card">
-      <h3>Moroccan Bath</h3>
-      <p>Relaxing traditional Moroccan bath experience.</p>
+  </section>
+
+
+  <!-- OFFERS -->
+  <section class="offers" id="offers">
+
+    <div class="offer-box">
+      <div class="hero-small">Special Package</div>
+
+      <h2>
+        More Beauty.<br>
+        More Value.
+      </h2>
+
+      <div class="offer-price">
+        Packages from<br>
+        <strong>199 QAR</strong>
+      </div>
+
+      <a href="https://wa.me/97452011520?text=Hello%20La%20Gazelle%20Beauty%20Salon%2C%20I%20would%20like%20to%20know%20more%20about%20your%20beauty%20packages."
+         target="_blank"
+         class="btn btn-outline">
+         Ask About Offers
+      </a>
     </div>
 
-    <div class="service-card">
-      <h3>Massage</h3>
-      <p>Relaxation and wellness massage services.</p>
+    <div class="offer-details">
+      <div class="section-small">La Gazelle Packages</div>
+
+      <h2 class="section-title">
+        Choose Your Perfect Beauty Experience
+      </h2>
+
+      <p>
+        Enjoy a selection of La Gazelle beauty services through
+        our specially designed packages. Contact our team on
+        WhatsApp to receive the latest available offers and
+        complete service list.
+      </p>
+
+      <a href="https://wa.me/97452011520?text=Hello%20La%20Gazelle%20Beauty%20Salon%2C%20please%20send%20me%20your%20latest%20offers."
+         target="_blank"
+         class="btn btn-primary">
+         View Latest Offers
+      </a>
     </div>
 
-  </div>
-</section>
+  </section>
 
-<section class="booking" id="booking">
-  <h2>Book Your Appointment</h2>
-  <p>Contact us directly on WhatsApp to reserve your appointment.</p>
 
-  <a class="btn"
-     href="https://wa.me/"
-     target="_blank">
-     Book on WhatsApp
+  <!-- ABOUT -->
+  <section class="about" id="about">
+
+    <div class="about-logo">
+      <img src="logo.png" alt="La Gazelle Beauty Salon Logo">
+    </div>
+
+    <div class="about-content">
+
+      <div class="section-small">About Us</div>
+
+      <h2 class="section-title">
+        Where Beauty Meets Care
+      </h2>
+
+      <p>
+        At La Gazelle Beauty Salon, we believe every beauty
+        appointment should be more than just a service.
+        It should be a moment dedicated entirely to you.
+      </p>
+
+      <p>
+        Our salon offers a wide range of beauty and wellness
+        services in a welcoming environment created especially
+        for women.
+      </p>
+
+      <a href="https://wa.me/97452011520"
+         target="_blank"
+         class="btn btn-primary">
+        Contact Us
+      </a>
+
+    </div>
+
+  </section>
+
+
+  <!-- CONTACT -->
+  <section class="contact" id="contact">
+
+    <div class="contact-container">
+
+      <div class="contact-logo">
+        <img src="logo.png" alt="La Gazelle Beauty Salon">
+
+        <p>
+          Beauty, elegance and care — all in one place.
+        </p>
+      </div>
+
+      <div>
+        <h3>Contact</h3>
+
+        <a href="tel:+97452011520">
+          +974 5201 1520
+        </a>
+
+        <a href="https://wa.me/97452011520"
+           target="_blank">
+          WhatsApp
+        </a>
+
+        <a href="https://www.instagram.com/lagazelle.salon/"
+           target="_blank"
+           class="social-link">
+          Instagram @lagazelle.salon
+        </a>
+      </div>
+
+      <div>
+        <h3>Visit Us</h3>
+
+        <p>
+          La Gazelle Beauty Salon
+        </p>
+
+        <a href="https://maps.app.goo.gl/MH9fjBHNZ2bSywtJA"
+           target="_blank">
+          Open Google Maps
+        </a>
+
+        <a href="https://wa.me/97452011520?text=Hello%20La%20Gazelle%20Beauty%20Salon%2C%20I%20would%20like%20to%20book%20an%20appointment."
+           target="_blank"
+           class="social-link">
+          Book an Appointment
+        </a>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <footer>
+    © 2026 La Gazelle Beauty Salon. All Rights Reserved.
+  </footer>
+
+
+  <!-- FLOATING WHATSAPP -->
+  <a class="whatsapp"
+     href="https://wa.me/97452011520?text=Hello%20La%20Gazelle%20Beauty%20Salon%2C%20I%20would%20like%20to%20book%20an%20appointment."
+     target="_blank"
+     aria-label="WhatsApp">
+    ☎
   </a>
-</section>
-
-<footer id="contact">
-  <p>La Gazelle Beauty Salon</p>
-  <p>Beauty • Elegance • Care</p>
-</footer>
 
 </body>
 </html>
