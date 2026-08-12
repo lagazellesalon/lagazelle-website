@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>La Gazelle Beauty Salon</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #f7f2f4;
+      color: #2d1f2a;
+    }
+
+    header {
+      background: #ffffff;
+      padding: 18px 7%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    }
+
+    .logo {
+      font-size: 26px;
+      font-weight: bold;
+      color: #7a215d;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #332631;
+      margin-left: 22px;
+      font-size: 15px;
+    }
+
+    .hero {
+      min-height: 88vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 40px 20px;
+      background:
+        linear-gradient(rgba(25,10,22,0.38), rgba(25,10,22,0.38)),
+        url('https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1600&q=80');
+      background-size: cover;
+      background-position: center;
+      color: white;
+    }
+
+    .hero-content {
+      max-width: 800px;
+    }
+
+    .hero h1 {
+      font-size: 58px;
+      margin-bottom: 15px;
+    }
+
+    .hero p {
+      font-size: 20px;
+      margin-bottom: 30px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 14px 28px;
+      background: #8b2d72;
+      color: white;
+      text-decoration: none;
+      border-radius: 30px;
+      margin: 5px;
+    }
+
+    .btn-outline {
+      background: transparent;
+      border: 1px solid white;
+    }
+
+    section {
+      padding: 80px 7%;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 45px;
+    }
+
+    .section-title h2 {
+      font-size: 38px;
+      color: #6b1f56;
+      margin-bottom: 10px;
+    }
+
+    .services {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 22px;
+    }
+
+    .service-card {
+      background: white;
+      padding: 35px 20px;
+      border-radius: 18px;
+      text-align: center;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+    }
+
+    .service-card h3 {
+      color: #70245a;
+      margin-bottom: 12px;
+    }
+
+    .booking {
+      background: #2c1627;
+      color: white;
+      text-align: center;
+    }
+
+    .booking h2 {
+      font-size: 38px;
+      margin-bottom: 15px;
+    }
+
+    .booking p {
+      margin-bottom: 25px;
+    }
+
+    footer {
+      background: #160d14;
+      color: white;
+      text-align: center;
+      padding: 30px;
+    }
+
+    @media(max-width: 900px) {
+      .services {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      nav {
+        display: none;
+      }
+
+      .hero h1 {
+        font-size: 42px;
+      }
+    }
+
+    @media(max-width: 550px) {
+      .services {
+        grid-template-columns: 1fr;
+      }
+
+      .hero h1 {
+        font-size: 34px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">La Gazelle</div>
+
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#services">Services</a>
+    <a href="#booking">Book Now</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<section class="hero" id="home">
+  <div class="hero-content">
+    <h1>Beauty Begins Here</h1>
+    <p>Luxury beauty services designed to make you feel your best.</p>
+
+    <a class="btn" href="#services">Our Services</a>
+    <a class="btn btn-outline" href="#booking">Book Now</a>
+  </div>
+</section>
+
+<section id="services">
+
+  <div class="section-title">
+    <h2>Our Services</h2>
+    <p>Discover our beauty and wellness services</p>
+  </div>
+
+  <div class="services">
+
+    <div class="service-card">
+      <h3>Hair</h3>
+      <p>Hair styling, coloring and treatments.</p>
+    </div>
+
+    <div class="service-card">
+      <h3>Nails</h3>
+      <p>Manicure, pedicure, gel and extensions.</p>
+    </div>
+
+    <div class="service-card">
+      <h3>Moroccan Bath</h3>
+      <p>Relaxing traditional Moroccan bath experience.</p>
+    </div>
+
+    <div class="service-card">
+      <h3>Massage</h3>
+      <p>Relaxation and wellness massage services.</p>
+    </div>
+
+  </div>
+</section>
+
+<section class="booking" id="booking">
+  <h2>Book Your Appointment</h2>
+  <p>Contact us directly on WhatsApp to reserve your appointment.</p>
+
+  <a class="btn"
+     href="https://wa.me/"
+     target="_blank">
+     Book on WhatsApp
+  </a>
+</section>
+
+<footer id="contact">
+  <p>La Gazelle Beauty Salon</p>
+  <p>Beauty • Elegance • Care</p>
+</footer>
+
+</body>
+</html>
